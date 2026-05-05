@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Step 1: Email Input -->
+        <div id="email-section" class="card">
+            <h1 class="title">Verify Email</h1>
+            <p class="subtitle">Enter your email to receive a 6-digit OTP</p>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="name@example.com" required>
+            </div>
+            <button id="send-otp-btn" class="btn">Send OTP Code</button>
+            <div id="email-msg" class="msg"></div>
+        </div>
+
+        <!-- Step 2: OTP Verification -->
+        <div id="otp-section" class="card hidden">
+            <button id="back-btn" class="back-link">← Change Email</button>
+            <h1 class="title">Verification Code</h1>
+            <p class="subtitle">We've sent a code to <span id="display-email"></span></p>
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" class="otp-input" id="otp-1">
+                <input type="text" maxlength="1" class="otp-input" id="otp-2">
+                <input type="text" maxlength="1" class="otp-input" id="otp-3">
+                <input type="text" maxlength="1" class="otp-input" id="otp-4">
+                <input type="text" maxlength="1" class="otp-input" id="otp-5">
+                <input type="text" maxlength="1" class="otp-input" id="otp-6">
+            </div>
+            <button id="verify-otp-btn" class="btn">Verify OTP</button>
+            <div class="resend-container">
+                <p>Didn't receive code?</p>
+                <button id="resend-otp-btn" class="resend-link">Resend Code</button>
+            </div>
+            <div id="otp-msg" class="msg"></div>
+        </div>
+
+        <!-- Step 3: Success -->
+        <div id="success-section" class="card hidden">
+            <div class="success-icon">✓</div>
+            <h1 class="title">Verified!</h1>
+            <p class="subtitle">Your email address has been successfully verified.</p>
+            <button class="btn" onclick="window.location.reload()">Done</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

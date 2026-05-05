@@ -1,0 +1,39 @@
+# Email Configuration Setup Guide
+
+## Option 1: Gmail SMTP (Recommended for testing)
+
+1. Enable 2-Factor Authentication on your Gmail account
+2. Generate an App Password:
+   - Go to Google Account settings
+   - Security → 2-Step Verification → App passwords
+   - Generate a new app password for "Mail"
+3. Add these to your .env.local file:
+
+# Gmail Configuration
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-16-character-app-password
+
+## Option 2: Resend API (Production-ready)
+
+1. Sign up at https://resend.com
+2. Get your API key from dashboard
+3. Add this to your .env.local file:
+
+# Resend Configuration
+RESEND_API_KEY=re_your_actual_api_key
+
+## Additional Required Environment Variables
+
+# Database
+MONGODB_URI=mongodb://localhost:27017/college-connect
+
+# NextAuth
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-secret-key-here
+
+# JWT
+JWT_SECRET=your-jwt-secret-here
+
+# Supabase Auth
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
