@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { Logo } from "@/components/Logo";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function VerifyOtpPage() {
+function VerifyOtpForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get("email") || "";
@@ -308,3 +308,12 @@ export default function VerifyOtpPage() {
     </div>
   );
 }
+
+export default function VerifyOtpPage() {
+  return (
+    <Suspense fallback={<Loader2 className="w-8 h-8 animate-spin text-blue-500 z-10" />}>
+      <VerifyOtpForm />
+    </Suspense>
+  );
+}
+

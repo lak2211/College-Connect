@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd college-connect && npm run build",
+  "outputDirectory": "college-connect/.next"
+}
