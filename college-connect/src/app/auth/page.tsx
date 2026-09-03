@@ -6,6 +6,8 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { Loader2, Mail, ArrowRight, ShieldCheck, RefreshCw } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default function SupabaseAuth() {
   const supabase = useMemo(() => createClient(), []);
   const router = useRouter();
